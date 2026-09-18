@@ -1,9 +1,12 @@
-# Uruchamianie projektu
+# Icy Tower 2 Unity prototype
 
-Ta wersja tworzy platformy i postać proceduralnie podczas uruchomienia gry.
+Projekt zawiera generowane runtime:
+- pełne menu główne,
+- przycisk GRAJ,
+- panel postaci,
+- opcje POSTACIE, MAPY i USTAWIENIA,
+- ekran najlepszych wyników,
+- HUD wyniku, czasu i combo,
+- ekran pauzy i Game Over.
 
-1. Otwórz `Assets/Scenes/Main.unity`.
-2. Kliknij przycisk **Play** u góry Unity.
-3. Sterowanie: A/D lub strzałki, skok Space/W/Up.
-
-Ważne: w trybie **Scene** przed kliknięciem Play zobaczysz tylko kamerę/puste tło, ponieważ obiekty gry są generowane przez `GameBootstrap` w czasie działania. To nie jest brak plików gry — jest to prototyp runtime.
+Otwórz `Assets/Scenes/Main.unity` i kliknij **Play**. Menu pojawi się automatycznie. Kliknij `GRAJ`, aby rozpocząć wspinanie.
