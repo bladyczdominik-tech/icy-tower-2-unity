@@ -1,19 +1,23 @@
-# Icy Tower 2 - Unity prototype
+# Icy Tower 2 Unity prototype
 
-This repository contains a Unity 6000.6.2f1-compatible prototype inspired by the reference screenshots: vertical tower climbing, colorful pixel-art style, timer, score, and stylized menu.
+Playable Unity 6000.6.2f1 vertical platformer prototype inspired by the supplied references. It uses generated placeholder art and does not include proprietary game assets.
+
+## Controls
+- **A/D** or **Left/Right arrows** — move
+- **Space**, **W**, or **Up arrow** — jump
+- **P** or **Escape** — pause
+- **R** — restart after falling
+
+## Run
+1. Install Unity 6000.6.2f1.
+2. Clone/download this repository.
+3. Open the repository folder in Unity Hub.
+4. Open any empty scene and press Play. The runtime bootstrap creates the complete playable prototype automatically.
 
 ## Included
-- Unity project scaffold for 6000.6.2f1
-- Runtime bootstrap for a playable vertical platformer prototype
-- Procedural 2D sprites, no external art required
-- Score, combo, timer, and camera follow
-- Menu-inspired UI structure in gameplay and startup flow
-
-## Open in Unity
-1. Download or clone this repository.
-2. Open the folder in Unity 6000.6.2f1.
-3. Let Unity import the project.
-4. Open the `Assets/Scenes` scene or run the project.
-
-## Notes
-This is a playable prototype inspired by the provided images, built without reusing proprietary art assets. The core mechanics prioritize the look and feel of the original style rather than exact asset replication.
+- procedural pixel-style player, platforms, and sky
+- vertical procedural platform generation
+- camera follow
+- score, combo and timer HUD
+- pause and game-over states
+- restart flow
