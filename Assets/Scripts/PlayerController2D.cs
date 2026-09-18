@@ -2,44 +2,9 @@ using UnityEngine;
 
 public class PlayerController2D : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    private SpriteRenderer sprite;
-    private bool isGrounded;
-    private float moveSpeed = 7.5f;
-    private float jumpForce = 14.5f;
-    private float horizontal;
-    private float coyoteTime;
-
-    public void Initialize(Rigidbody2D rigidbody)
-    {
-        rb = rigidbody;
-        sprite = GetComponent<SpriteRenderer>();
-    }
-
-    private void Update()
-    {
-        horizontal = Input.GetAxisRaw("Horizontal");
-        if (Mathf.Abs(horizontal) > 0.01f)
-            sprite.flipX = horizontal < 0f;
-
-        coyoteTime = isGrounded ? 0.12f : Mathf.Max(0f, coyoteTime - Time.deltaTime);
-        bool jumpPressed = Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W);
-        if (jumpPressed && coyoteTime > 0f)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            isGrounded = false;
-            coyoteTime = 0f;
-        }
-    }
-
-    private void FixedUpdate()
-    {
-        rb.velocity = new Vector2(horizontal * moveSpeed, rb.velocity.y);
-        var col = GetComponent<BoxCollider2D>();
-        if (col == null) return;
-        var bounds = col.bounds;
-        Vector2 origin = new Vector2(bounds.center.x, bounds.min.y + 0.05f);
-        Vector2 size = new Vector2(bounds.size.x * 0.7f, 0.1f);
-        isGrounded = Physics2D.BoxCast(origin, size, 0f, Vector2.down, 0.12f, LayerMask.GetMask("Default")).collider != null;
-    }
+    private Rigidbody2D rb; private SpriteRenderer sprite; private bool grounded; private float horizontal; private float coyote; private int audioProfile;
+    public void Initialize(Rigidbody2D body){rb=body;sprite=GetComponent<SpriteRenderer>();}
+    public void SetAudioProfile(int profile){audioProfile=profile;}
+    private void Update(){horizontal=Input.GetAxisRaw("Horizontal");if(Mathf.Abs(horizontal)>.01f)sprite.flipX=horizontal<0;coyote=grounded?.12f:Mathf.Max(0,coyote-Time.deltaTime);if((Input.GetKeyDown(KeyCode.Space)||Input.GetKeyDown(KeyCode.W)||Input.GetKeyDown(KeyCode.UpArrow))&&coyote>0){rb.velocity=new Vector2(rb.velocity.x,14.5f);grounded=false;coyote=0;AudioFactory.PlayJump(audioProfile);}}
+    private void FixedUpdate(){rb.velocity=new Vector2(horizontal*7.5f,rb.velocity.y);var c=GetComponent<BoxCollider2D>();if(c==null)return;var b=c.bounds;grounded=Physics2D.BoxCast(new Vector2(b.center.x,b.min.y+.05f),new Vector2(b.size.x*.7f,.1f),0,Vector2.down,.12f,LayerMask.GetMask("Default")).collider!=null;}
 }
