@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class GameBootstrap : MonoBehaviour
 {
@@ -8,10 +7,10 @@ public class GameBootstrap : MonoBehaviour
     private Camera mainCamera;
     private GameObject worldRoot;
     private GameObject uiRoot;
-    private TMP_Text scoreText;
-    private TMP_Text timerText;
-    private TMP_Text comboText;
-    private TMP_Text stateText;
+    private Text scoreText;
+    private Text timerText;
+    private Text comboText;
+    private Text stateText;
     private GameObject pausePanel;
 
     private float highestY;
@@ -99,7 +98,6 @@ public class GameBootstrap : MonoBehaviour
 
         var ground = CreatePlatform(new Vector3(0f, -5.5f, 0f), new Vector2(22f, 1.1f), new Color32(255, 214, 128, 255), new Color32(126, 84, 64, 255));
         ground.name = "Ground";
-
         startY = -4.5f;
         highestY = startY;
         Random.InitState(System.Environment.TickCount);
@@ -122,21 +120,17 @@ public class GameBootstrap : MonoBehaviour
         var playerGO = new GameObject("Player");
         playerGO.transform.SetParent(worldRoot.transform);
         playerGO.transform.position = new Vector3(0f, -2.8f, 0f);
-
         var sr = playerGO.AddComponent<SpriteRenderer>();
         sr.sprite = ProceduralSpriteFactory.CreatePlayerSprite();
         sr.sortingOrder = 10;
-
         var rb = playerGO.AddComponent<Rigidbody2D>();
         rb.gravityScale = 4.2f;
         rb.freezeRotation = true;
         rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
-
         var col = playerGO.AddComponent<BoxCollider2D>();
         col.size = new Vector2(1f, 1.25f);
         col.offset = new Vector2(0f, -0.05f);
-
         player = playerGO.AddComponent<PlayerController2D>();
         player.Initialize(rb);
     }
@@ -146,11 +140,9 @@ public class GameBootstrap : MonoBehaviour
         var platformGO = new GameObject("Platform");
         platformGO.transform.SetParent(worldRoot.transform);
         platformGO.transform.position = position;
-
         var sr = platformGO.AddComponent<SpriteRenderer>();
         sr.sprite = ProceduralSpriteFactory.CreatePlatformSprite(size.x, size.y, fill, edge);
         sr.sortingOrder = 3;
-
         var col = platformGO.AddComponent<BoxCollider2D>();
         col.size = new Vector2(size.x, size.y);
         platformGO.layer = LayerMask.NameToLayer("Default");
@@ -163,8 +155,7 @@ public class GameBootstrap : MonoBehaviour
         {
             float x = Random.Range(-6.2f, 6.2f);
             float y = highestY + 1.6f + i * 1.35f;
-            float width = Random.Range(2.5f, 4.5f);
-            CreatePlatform(new Vector3(x, y, 0f), new Vector2(width, 1f), new Color32(163, 142, 194, 255), new Color32(92, 65, 130, 255));
+            CreatePlatform(new Vector3(x, y, 0f), new Vector2(Random.Range(2.5f, 4.5f), 1f), new Color32(163, 142, 194, 255), new Color32(92, 65, 130, 255));
             highestY = Mathf.Max(highestY, y);
         }
     }
@@ -180,12 +171,10 @@ public class GameBootstrap : MonoBehaviour
         scaler.referenceResolution = new Vector2(1920f, 1080f);
         uiRoot.AddComponent<GraphicRaycaster>();
 
-        scoreText = MakeText("ScoreText", "SCORE  00000", 30, TextAlignmentOptions.Left, new Vector2(30f, -30f), new Color32(255, 245, 150, 255), new Vector2(0f, 1f));
-        timerText = MakeText("TimerText", "TIME  0.0s", 30, TextAlignmentOptions.Right, new Vector2(-30f, -30f), new Color32(255, 245, 150, 255), new Vector2(1f, 1f));
-        comboText = MakeText("ComboText", "COMBO  x0", 26, TextAlignmentOptions.Center, new Vector2(0f, -30f), new Color32(255, 112, 180, 255), new Vector2(0.5f, 1f));
-        stateText = MakeText("StateText", "", 42, TextAlignmentOptions.Center, new Vector2(0f, 40f), Color.white, new Vector2(0.5f, 0.5f));
-        stateText.rectTransform.anchorMin = new Vector2(0.5f, 0.5f);
-        stateText.rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+        scoreText = MakeText("ScoreText", "SCORE  00000", 30, TextAnchor.UpperLeft, new Vector2(30f, -30f), new Color32(255, 245, 150, 255), new Vector2(0f, 1f));
+        timerText = MakeText("TimerText", "TIME  0.0s", 30, TextAnchor.UpperRight, new Vector2(-30f, -30f), new Color32(255, 245, 150, 255), new Vector2(1f, 1f));
+        comboText = MakeText("ComboText", "COMBO  x0", 26, TextAnchor.UpperCenter, new Vector2(0f, -30f), new Color32(255, 112, 180, 255), new Vector2(0.5f, 1f));
+        stateText = MakeText("StateText", "", 42, TextAnchor.MiddleCenter, new Vector2(0f, 40f), Color.white, new Vector2(0.5f, 0.5f));
 
         pausePanel = new GameObject("PausePanel");
         pausePanel.transform.SetParent(uiRoot.transform);
@@ -199,16 +188,17 @@ public class GameBootstrap : MonoBehaviour
         pausePanel.SetActive(false);
     }
 
-    private TMP_Text MakeText(string name, string value, float size, TextAlignmentOptions alignment, Vector2 position, Color color, Vector2 anchor)
+    private Text MakeText(string name, string value, int size, TextAnchor alignment, Vector2 position, Color color, Vector2 anchor)
     {
         var go = new GameObject(name);
         go.transform.SetParent(uiRoot.transform);
-        var text = go.AddComponent<TextMeshProUGUI>();
+        var text = go.AddComponent<Text>();
         text.text = value;
+        text.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
         text.fontSize = size;
         text.color = color;
         text.alignment = alignment;
-        text.fontStyle = FontStyles.Bold;
+        text.fontStyle = FontStyle.Bold;
         var rect = text.rectTransform;
         rect.anchorMin = anchor;
         rect.anchorMax = anchor;
