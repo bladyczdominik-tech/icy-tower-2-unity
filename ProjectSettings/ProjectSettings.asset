@@ -1,0 +1,210 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!29 &1
+PlayerSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 26
+  productGUID: 9b2aa3f56c8a4d66a2a7e6c7c45e1f10
+  AndroidProfiler: 0
+  defaultScreenOrientation: 4
+  targetDevice: 2
+  useOnDemandResources: 0
+  accelerometerFrequency: 60
+  companyName: IcyTowerPrototype
+  productName: Icy Tower 2 Prototype
+  defaultCursor: {fileID: 0}
+  cursorHotspot: {x: 0, y: 0}
+  m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.28627452, b: 0.43137255, a: 1}
+  m_SplashScreenOverlayOpacity: 1
+  m_SplashScreenAnimation: 1
+  m_SplashScreenLogoStyle: 1
+  m_SplashScreenDrawMode: 0
+  m_SplashScreenBackgroundAnimationZoom: 1
+  m_SplashScreenLogoAnimationZoom: 1
+  m_SplashScreenBackgroundLandscapeAspect: 1
+  m_SplashScreenBackgroundPortraitAspect: 1
+  m_SplashScreenBackgroundLandscapeUvs: {x: 0, y: 0, width: 1, height: 1}
+  m_SplashScreenBackgroundPortraitUvs: {x: 0, y: 0, width: 1, height: 1}
+  m_SplashScreenBackgroundLandscapeUvs2: {x: 0, y: 0, width: 1, height: 1}
+  m_SplashScreenBackgroundPortraitUvs2: {x: 0, y: 0, width: 1, height: 1}
+  m_SplashScreenLogos: []
+  m_VirtualRealitySplashScreen: {fileID: 0}
+  m_HolographicTrackingLossScreen: {fileID: 0}
+  defaultScreenWidth: 1280
+  defaultScreenHeight: 720
+  m_StereoRenderingPath: 0
+  m_ActiveColorSpace: 0
+  unsupportedMSAAFallback: 0
+  m_SpriteBatchVertexThreshold: 300
+  m_MTRendering: 1
+  mipStripping: 0
+  numberOfMipsStripped: 0
+  numberOfMipsStrippedPerMipmapLimitGroup: {}
+  m_StackTraceTypes: 010000000100000001000000
+  iosShowActivityIndicatorOnLoading: -1
+  androidShowActivityIndicatorOnLoading: -1
+  androidStartInFullscreen: 1
+  androidRenderOutsideSafeArea: 1
+  androidUseSwappy: 1
+  androidBlitType: 0
+  androidResizableWindow: 0
+  androidDefaultWindowWidth: 1920
+  androidDefaultWindowHeight: 1080
+  androidMinimumWindowWidth: 400
+  androidMinimumWindowHeight: 300
+  androidFullscreenMode: 1
+  androidAutoRotationBehavior: 1
+  androidRequireARCore: 0
+  androidMinifyRelease: 0
+  androidMinifyDebug: 0
+  androidValidateAppBundleSize: 1
+  applicationIdentifier:
+    Standalone: com.IcyTowerPrototype.Game
+  bundleVersion: 1.0.0
+  preloadedAssets: []
+  metroInputSource: 0
+  xboxOneEnableAvatar: 0
+  xboxOneEnableKinect: 0
+  xboxOneEnableKinectAutoTracking: 0
+  xboxOneEnableFitness: 0
+  xboxOneEnableDebugAPI: 0
+  webGLInitialMemorySize: 32
+  webGLMaximumMemorySize: 2048
+  webGLMemoryGrowthMode: 2
+  webGLMemoryLinearGrowthStep: 16
+  webGLMemoryGeometricGrowthStep: 0.2
+  webGLMemoryGeometricGrowthCap: 96
+  webGLPowerPreference: 2
+  scriptingDefineSymbols: {}
+  additionalCompilerArguments:
+    Standalone: []
+  platformArchitecture: {}
+  scriptingBackend: {}
+  il2cppCompilerConfiguration: {}
+  il2cppCodeGeneration: {}
+  managedStrippingLevel: {}
+  incrementalIl2cppBuild: {}
+  suppressCommonWarnings: 1
+  allowUnsafeCode: 0
+  useDeterministicCompilation: 1
+  additionalIl2CppArgs: 
+  scriptingRuntimeVersion: 1
+  gcIncremental: 1
+  apiCompatibilityLevelPerPlatform: {}
+  m_RenderingPath: 1
+  mobileMTRendering: 1
+  metroPackageName: Icy Tower 2 Prototype
+  metroPackageVersion: 1.0.0.0
+  metroCertificatePath: 
+  metroCertificatePassword: 
+  metroCertificateSubject: CN=Icy Tower 2 Prototype
+  metroCertificateIssuer: CN=Icy Tower 2 Prototype
+  metroCertificateNotAfter: 2035-01-01T00:00:00Z
+  metroCertificateNotBefore: 2025-01-01T00:00:00Z
+  metroCertificateAlgorithm: 0
+  metroCertificateValidityPeriod: 10
+  webGLTemplate: APPLICATION:Default
+  mobileTextureSubtarget: 0
+  xboxOneCapability: []
+  xboxOneTitleId: 0
+  xboxOneDescription: 
+  xboxOneLargeImage: {fileID: 0}
+  xboxOneSmallImage: {fileID: 0}
+  xboxOneSplashScreen: {fileID: 0}
+  xboxOneGameConfig: {fileID: 0}
+  xboxOneGameConfigIsCreated: 0
+  xboxOneEnableTypeOptimization: 0
+  xboxOnePresentImmediateThreshold: 0
+  switchMaxWorkerMultiple: 8
+  switchNVNShaderPoolsGranularity: 33554432
+  switchNVNDefaultPoolsGranularity: 16777216
+  switchNVNOtherPoolsGranularity: 16777216
+  switchNVNMaxPublicTextureIDCount: 0
+  switchNVNMaxPublicSamplerIDCount: 0
+  switchNVNNVNMaxPublicTextureIDCount: 0
+  switchNVNNVNMaxPublicSamplerIDCount: 0
+  switchNVNTitleNames: []
+  switchNVNBuildErrorReporting: 0
+  switchNVNEnableFileSystemTrace: 0
+  switchNVNLoggingLevel: 0
+  switchNVNSocketMemoryPoolSize: 6144
+  switchNVNMaxWorkerMultiple: 8
+  switchNVNMaxPublicTextureIDCount: 0
+  switchNVNMaxPublicSamplerIDCount: 0
+  switchNVNMaxPublicTextureIDCount: 0
+  switchNVNMaxSamplerIDCount: 0
+  switchNVNNVNMaxPublicTextureIDCount: 0
+  switchNVNNVNMaxPublicSamplerIDCount: 0
+  stadiaPresentMode: 0
+  stadiaTargetFramerate: 0
+  vulkanNumSwapchainBuffers: 3
+  vulkanEnableSetSRGBWrite: 0
+  vulkanEnablePreTransform: 0
+  vulkanEnableLateAcquireNextImage: 0
+  vulkanEnableCommandBufferRecycling: 1
+  loadStoreDebugModeEnabled: 0
+  bundleVersionCode: 1
+  metroPackageName: Icy Tower 2 Prototype
+  switchNMETAOverride: 
+  switchNetLibKey: 
+  switchSocketMemoryPoolGranularity: 16777216
+  switchSocketAllocatorPoolGranularity: 16777216
+  switchSocketMemoryPoolGranularity: 16777216
+  switchSocketAllocatorPoolGranularity: 16777216
+  switchSocketMemoryPoolSize: 18432
+  switchSocketAllocatorPoolSize: 128
+  switchMaxWorkerMultiple: 8
+  stadiaPresentMode: 0
+  stadiaTargetFramerate: 0
+  scriptingDefineSymbols: {}
+  additionalCompilerArguments: {}
+  platformArchitecture: {}
+  scriptingBackend: {}
+  il2cppCompilerConfiguration: {}
+  il2cppCodeGeneration: {}
+  managedStrippingLevel: {}
+  incrementalIl2cppBuild: {}
+  suppressCommonWarnings: 1
+  allowUnsafeCode: 0
+  useDeterministicCompilation: 1
+  additionalIl2CppArgs: 
+  scriptingRuntimeVersion: 1
+  gcIncremental: 1
+  apiCompatibilityLevelPerPlatform: {}
+  m_RenderingPath: 1
+  mobileMTRendering: 1
+  metroPackageName: Icy Tower 2 Prototype
+  metroPackageVersion: 1.0.0.0
+  metroCertificatePath: 
+  metroCertificatePassword: 
+  metroCertificateSubject: CN=Icy Tower 2 Prototype
+  metroCertificateIssuer: CN=Icy Tower 2 Prototype
+  metroCertificateNotAfter: 2035-01-01T00:00:00Z
+  metroCertificateNotBefore: 2025-01-01T00:00:00Z
+  metroCertificateAlgorithm: 0
+  metroCertificateValidityPeriod: 10
+  webGLTemplate: APPLICATION:Default
+  mobileTextureSubtarget: 0
+  xboxOneCapability: []
+  xboxOneTitleId: 0
+  xboxOneDescription: 
+  xboxOneLargeImage: {fileID: 0}
+  xboxOneSmallImage: {fileID: 0}
+  xboxOneSplashScreen: {fileID: 0}
+  xboxOneGameConfig: {fileID: 0}
+  xboxOneGameConfigIsCreated: 0
+  xboxOneEnableTypeOptimization: 0
+  switchMaxWorkerMultiple: 8
+  switchNVNShaderPoolsGranularity: 33554432
+  switchNVNDefaultPoolsGranularity: 16777216
+  switchNVNOtherPoolsGranularity: 16777216
+  switchNVNMaxPublicTextureIDCount: 0
+  switchNVNMaxPublicSamplerIDCount: 0
+  switchNVNNVNMaxPublicTextureIDCount: 0
+  switchNVNNVNMaxPublicSamplerIDCount: 0
+  switchNVNTitleNames: []
+  switchNVNBuildErrorReporting: 0
+  switchNVNEnableFileSystemTrace: 0
+  switchNVNLoggingLevel: 0
+  switchNVNSocketMemoryPoolSize: 6144
+  switchNVNMaxWorkerMultiple: 8
